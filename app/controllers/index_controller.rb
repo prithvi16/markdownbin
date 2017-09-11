@@ -9,8 +9,10 @@ class IndexController < ApplicationController
   def new
     @paste = Paste.new(paste_params)
     @paste.hash_number= SecureRandom.hex (6)
-    
-    @paste.save
+    if @paste.title.blank?
+      @paste.title= "Untitled"
+    end
+      @paste.save
     redirect_to "/p/"+ @paste.hash_number
 
   end
@@ -33,7 +35,7 @@ class IndexController < ApplicationController
   private
 
   def paste_params
-    params.require(:paste).permit(:title, :content , :pass_checker , :pass_key)
+    params.require(:paste).permit(:title, :content )
   end
 
 end
