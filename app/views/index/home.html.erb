@@ -1,0 +1,75 @@
+ 
+<div class="row">
+
+    <div class="col-md-3">
+        <p id="counter" >
+            <br>Words: 0
+            <br>Lines: 0
+        </p>
+    </div>
+<div class="col-md-9">
+
+    <%= form_for @newpaste, url: "/",method: "post" , html: {class: "nifty_form"} do |f| %>
+    
+    <div class="form-group">
+        <%= f.label :title %> 
+        <%= f.text_field :title , class: "form-control" %>
+  
+      </div>
+  
+      <div class="form-group">
+          <%= f.label :content %>
+          <%= f.text_area :content, size: "60x12" , id: "word-area" , class: "form-control", placeholder: "REMEMBER MARKDOWN IS  ❤ " %>
+  
+      </div>
+        
+        
+        <%= f.submit "Create" , class: "btn btn-primary" %>
+    
+    
+  <% end %>
+</div>
+
+    
+
+</div>
+
+
+
+
+
+
+<script> 
+
+$( document ).on('turbolinks:load', function() {
+
+
+
+
+  $("#word-area").markdown({autofocus:false,savable:false});
+  function wordCount( val ){
+    var wom = val.match(/\S+/g);
+    return {
+        
+        words              : wom ? wom.length : 0,
+        lines              : val.split(/\r*\n/).length
+    };
+}
+
+
+var textarea = document.getElementById("word-area");
+var result   = document.getElementById("counter");
+
+textarea.addEventListener("input", function(){
+  var v = wordCount( this.value );
+  result.innerHTML = (
+      
+      "<br>Words: "+ v.words +
+      "<br>Lines: "+ v.lines
+  );
+}, false);
+    
+})
+
+
+</script>

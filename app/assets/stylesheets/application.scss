@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap-markdown
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Quicksand');
+ @import url('https://fonts.googleapis.com/css?family=PT+Mono');
+ #counter{
+     font-size: 45px;
+     text-align: center;
+ }
+
+ body{
+    font-family: 'Quicksand', sans-serif;
+ }
+ btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 35px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.new-paste {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #333;
+    border-color: black;
+}
+#word-area  {
+
+    font-family: 'PT Mono', monospace;
+}
+
+.paste-title{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.paste-body{
+
+    font-family: 'PT Mono', monospace;
+}

@@ -1,0 +1,21 @@
+
+
+
+<span>
+        <h1 class="paste-title"> <%= @paste.title %></h1><input id="address" value="<%= request.original_url %>"  >      <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#address">
+        Copy to clipboard
+    </button> </span>
+<hr>
+<p id="paste-body" > <%= markdown2 (@paste.content) %>  </p>
+
+
+<p id="address"><%= request.original_url %></p> 
+<button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#address">
+    Copy to clipboard
+</button>
+<script>
+$( document ).on('turbolinks:load', function() {
+    var clipboard = new Clipboard('.clipboard-btn');
+  console.log(clipboard);
+})
+</script>

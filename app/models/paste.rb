@@ -1,0 +1,2 @@
+class Paste < ApplicationRecord
+end
