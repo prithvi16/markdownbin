@@ -3,9 +3,10 @@
 
 <span>
         <h1 class="paste-title"> <%= @paste.title %></h1><input id="address" value="<%= request.original_url %>"  >      <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#address">
-        Copy to clipboard
+        Copy to clipboard 
     </button> </span>
 <hr>
+<p><%= @paste.views %> Views</p>
 <p id="paste-body" > <%= markdown2 (@paste.content) %>  </p>
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909114507) do
+ActiveRecord::Schema.define(version: 20170911095322) do
 
   create_table "pastes", force: :cascade do |t|
     t.string "title"
@@ -18,8 +18,7 @@ ActiveRecord::Schema.define(version: 20170909114507) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "hash_number"
-    t.string "pass_key"
-    t.boolean "pass_checker", default: false
+    t.integer "views", default: 0
     t.index ["hash_number"], name: "index_pastes_on_hash_number"
   end
 

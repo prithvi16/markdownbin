@@ -49,8 +49,16 @@
 
 .new-paste {
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 500;
     margin-top: 20px;
+    a{
+        color: #222;
+      
+    }
+
+    a :hover {
+        color: #222;
+    }
 }
 
 .btn-primary {

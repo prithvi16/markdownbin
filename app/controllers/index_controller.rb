@@ -18,7 +18,15 @@ class IndexController < ApplicationController
   def show
     
     @paste = Paste.find_by hash_number: params[:id]
-    
+    recently_viewed = cookies[:viewd_posts].to_s.split(':')
+		if not recently_viewed.include?(@paste.hash_number.to_s)
+			@paste.update_column(:views,  @paste.views+1 )
+			recently_viewed << @paste.hash_number.to_s
+		end
+		cookies[:viewd_posts] = {
+			value:    recently_viewed.join(':'),
+			expires:  10.minutes.from_now
+		}
   end
 
 
