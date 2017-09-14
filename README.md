@@ -1,24 +1,20 @@
-# README
+# MarkdownBIN
+Markdownbin is a Ruby on rails app that works like pastebin , also it has markdown support.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+You can see the live demo version [here.](https://markdownbin.herokuapp.com/)
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+![screenshot](https://image.ibb.co/kGzzm5/spu_ea68c8_ogi2_3cwn3bmfojjlb56e.jpg "enter image title here")
 
-* Database creation
 
-* Database initialization
+## Contributing 
+To run the app you need rails 5.1.4 . If you want to contribute clone the repository and
 
-* How to run the test suite
+```bash
+cd markdownbin
+rails db:setup
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
